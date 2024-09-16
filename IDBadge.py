@@ -1,5 +1,18 @@
-first_name=input('please enter your first name: ')
+print('please enter the info to create id card')
 
-last_name=input('please enter your last name: ') 
+first_name = input('first name: ')
 
-print('Your name is: '+last_name.capitalize()+' '+first_name.capitalize()+' '+last_name.capitalize())
+last_name = input('last name: ') 
+
+email_address = input('email address: ')
+
+phone_number = input('phone number: ')
+
+job_title = input('job title: ')
+
+id_number = input('ID number: ')
+
+print ('The ID card is:')
+print (last_name.upper()+(', ')+first_name.capitalize()) 
+print (job_title.capitalize())
+print(id_number)

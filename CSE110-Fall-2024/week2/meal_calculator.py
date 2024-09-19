@@ -1,4 +1,5 @@
 #created by Matthew Rosenthal
+#added tax and change verification and add a tax function to calculate the tax on the order
 
 #get cost of meals from user
 adult_meal=float(input ('how much does the adult meal cost?: $'))

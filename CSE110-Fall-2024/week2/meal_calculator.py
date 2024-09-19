@@ -35,34 +35,23 @@ print(f'Tax: ${total_tax:.2f}')
 #display total due to user
 total = subtotal + total_tax
 print (f'Total: ${total:.2f}')
-cash = float(input('How much cash were you given?: '))
+cash = float(input('How much cash were you given?: $'))
+C=cash
+T=total
+change = C-T
+#Cash and total
 
-#Cash and total 
-def change(cash,total):
 while True:
-    C=cash
-    T=total
-    change_due = C-T
-    if change_due>=0:
-        change=change_due
-        return print(f'The change due is:{change}')
+    change<0
     if change>=0:
+        print(f'The change due is: ${change:.2f}')
         break
     else:
-        temp=abs(change_due)
+        temp=abs(change)
         print(f'Still Needed: ${temp:.2f}')
-        more=float(input('How much more money was given?: '))
-        C+more
-     
-            
-    
-
-
-
-
-# The line `print(change(cash,total))` is calling the `change` function with the arguments `cash`
-# and `total`, and then printing the return value of the function.
-change(cash,total) 
+        more=float(input('How much more money was given?: $'))
+        C+=more
+        change=C-T
 
 print('-------------------------------------------------')
 

@@ -3,14 +3,14 @@
 
 #get input from the user
 print('Please enter the follow words:')
-adjective=input('adj:')
-animal=input('animal:')
-verb_1=input('verb:')
-exclamation_1=input('exclamation:')
-verb_2=input('verb:')
-verb_3=input('verb:')
-exclamation_2=input('exclamation:')
-verb_4=input('verb:')
+adjective = input('adj:')
+animal = input('animal:')
+verb_1 = input('verb:')
+exclamation_1 = input('exclamation:')
+verb_2 = input('verb:')
+verb_3 = input('verb:')
+exclamation_2 = input('exclamation:')
+verb_4 = input('verb:')
 
 #output the story with the words entered from the user
 print('The other day, I was really in trouble. It all started when I saw a very')

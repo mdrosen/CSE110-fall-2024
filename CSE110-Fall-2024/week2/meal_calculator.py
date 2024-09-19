@@ -13,7 +13,7 @@ num_kid = int(input ('How many kid meals do you want?: '))
 
 #get tax rate from user 
 tax_rate = float(input('what is the tax percentage?: '))
-
+print('--------------------------------------------')
 #calculate total cost of meals before taxes
 k = float(num_kid) * kid_meal
 a = float(num_adults) * adult_meal

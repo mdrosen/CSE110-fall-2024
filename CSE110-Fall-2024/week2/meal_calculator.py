@@ -1,9 +1,6 @@
 #created by Matthew Rosenthal
 
 #get cost of meals from user
-from ast import Break
-
-
 adult_meal=float(input ('how much does the adult meal cost?: $'))
 kid_meal = float(input ('how much does the kid meal cost?: $'))
 
@@ -12,7 +9,17 @@ num_adults = int(input ('How many adult meals do you want?:' ))
 num_kid = int(input ('How many kid meals do you want?: '))
 
 #get tax rate from user 
-tax_rate = float(input('what is the tax percentage?: '))
+rate= float(input('what is the tax percentage?: '))
+#validate tax rate
+while True:
+    rate<1
+    if rate<=0:
+        temp=float(input('Please enter a Valid tax rate must be greater than 1: '))
+        rate=temp
+    else:
+        break
+tax_rate=rate
+
 print('--------------------------------------------')
 #calculate total cost of meals before taxes
 k = float(num_kid) * kid_meal
@@ -21,7 +28,7 @@ subtotal = k + a
 sub_total=(f'{subtotal:.2f}')
 print ('SubTotal: $',sub_total)
 
-#define tax with percentage and subtotal as inputs for the function 
+#define tax on meal function with percentage and subtotal as inputs for the function 
 def tax(p , s):
     pr=float(p)
     rate = (pr * s )/100

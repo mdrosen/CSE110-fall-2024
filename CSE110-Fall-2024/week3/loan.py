@@ -1,4 +1,5 @@
 
+print('Please enter a value between 1 - 10 for the following Questions:')
 while True:
     try:
         size=int(input('How large is the loan? '))

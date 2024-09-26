@@ -23,7 +23,7 @@ def choice(option1, option2):
     
 decision1 = choice('FLASHLIGHT','GLOW STICK')
 if decision1 == 1:
-    print('You turn on the flashlight but it is dim because the batteries are dying but you can see some stairs that spiral going up too the floor [ABOVE] you and also [DOWN] to what looks like they are going into the basement')
+    print('You turn on the flashlight but it is dim because the batteries are dying but you can see some stairs that spiral going up too the floor [ABOVE] you and also [BELOW] to what looks like they are going into the basement')
     decision2 = choice('ABOVE','BELOW')
     if decision2 == 1:
         print('As you walk up the stairs you can smell the sent of old books and as you enter the room you see bookcases filled with books covering most of the walls except one with a fireplace with logs ready to be lit, you decide to [LIGHT] the fireplace or [EXPLORE] the room further')
@@ -41,7 +41,7 @@ if decision1 == 1:
     elif decision2 == 2:
         print('As you walk down the stairs you see 3 different rooms one as you glance in it looks like a kitchen and the other 2 look like bedrooms, you decide to go into the [KITCHEN] or one of the [BEDROOMS]')
         decision3 = choice('KITCHEN','BEDROOMS')
-        
+        #need more
 elif decision1 == 2:
     print('You crack the glow stick and soft dim light comes off the glow stick and you notice something glowing on the wall that looks like a SWITCH and then you also notice a spiral STAIR case going to the floor above and below you ')
     decision2 = choice('SWITCH','STAIRS')
@@ -51,8 +51,8 @@ elif decision1 == 2:
         if decision3 == 1:
             print('You discover that it is in deed from the future and begin experimenting and discover that they have the formula to an amazing chemical that lets you teleport.[THE END] ')
         elif decision3 == 2:
-            print('')
+            print('need more')
             decision4 = choice('','')
     elif decision2 == 2:
-            print('')
+            print('need more')
             decision3 = choice('','')

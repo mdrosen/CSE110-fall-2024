@@ -27,4 +27,3 @@ if percentage > 70:
     print ('Pass')
 else:
     print ('Fail')
-    

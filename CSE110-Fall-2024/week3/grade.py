@@ -1,28 +1,41 @@
+temp = float(input('Please enter your grade percentage: '))
+percentage = round(temp, 2)
 
-percentage = float(input('Please enter your grade percentage: '))
-#temp= (f{temp.:2f})
-if percentage>= 90:
-    letter = 'A'
-    print(f'Your letter grade is : {letter}')
-elif percentage>=80:
-    letter = 'B'
+grade_value = ""
+if percentage%10>=7:
+    grade_value='+'
+elif percentage%10 >= 3:
+    grade_value='-'
+else:
+    grade_value=''
+
+if percentage >= 90:
+    #print('Your letter grade is : A')
+    if percentage > 97:
+        letter =  "A"
+    else: 
+        letter = f'A{grade_value}'
+
+elif percentage >= 80:
+    letter = f'B{grade_value}'
     #print('Your letter grade is : B')
-    print(f'Your letter grade is : {letter}') 
-elif percentage>=70:
-    letter = 'C'
+
+elif percentage >= 70:
+    letter = f'C{grade_value}'
     #print('Your letter grade is : C')
-    print(f'Your letter grade is : {letter}') 
-elif percentage>=60:
-    letter = 'D'
+
+elif percentage >= 60:
+    letter = f'D{grade_value}'
     #print('Your letter grade is : D')
-    print(f'Your letter grade is : {letter}')
+
 elif percentage < 60:
     letter = 'F'
     #print('Your letter grade is : F')
-    print(f'Your letter grade is : {letter}')
+
 else:
     print('not a valid number')
-    
+
+print(f'Your letter grade is : {letter}') 
 if percentage > 70:
     print ('Pass')
 else:

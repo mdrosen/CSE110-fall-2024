@@ -1,10 +1,10 @@
 temp = float(input('Please enter your grade percentage: '))
 percentage = round(temp, 2)
 
-grade_value = ""
-if percentage%10>=7:
-    grade_value='+'
-elif percentage%10 >= 3:
+grade_value = ''
+if percentage % 10 >= 7:
+    grade_value ='+'
+elif percentage % 10 >= 3:
     grade_value='-'
 else:
     grade_value=''
@@ -35,7 +35,8 @@ elif percentage < 60:
 else:
     print('not a valid number')
 
-print(f'Your letter grade is : {letter}') 
+print(f'Your letter grade is : {letter}')
+
 if percentage > 70:
     print ('Pass')
 else:

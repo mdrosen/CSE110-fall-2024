@@ -139,8 +139,4 @@ elif decision1 == 2:
         #down     
         elif decision3 == 2:
             print('')
-            print('you hear some music thumping and see glowing stuff all over the walls. You realize it is a party and you join the fun.[THE END]\n')
-    #stair                      
-    
-                    
-    
+            print('you hear some music thumping and see glowing stuff all over the walls. You realize it is a party and you join the fun.[THE END]\n')                    

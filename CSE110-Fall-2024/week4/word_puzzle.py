@@ -18,10 +18,15 @@ loop_count=0
 while guess != secret_word:
 
     guess=input('What is your guess? ')
+    word=guess.lower
     
     loop_count = loop_count + 1
     print(f'you have made {loop_count} guesses')
-    word=guess.lower
+    
+    
+    
+    
+    
     if word == secret_word:
         print('')
         print('congratulation you got the word correctly\n')

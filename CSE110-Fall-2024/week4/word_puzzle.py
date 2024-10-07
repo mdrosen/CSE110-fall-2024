@@ -13,15 +13,6 @@ guess_hint_dis=(''.join(guess_hint))
 
 print(f'Hint: {guess_hint_dis}\n')
 
-#while word != secret_word:
-
-
-
-#g_word_letter_list=list(word)
-#l_e =list element location
-l_e=0
-#word=guess.lower
-
 guess=''
 loop_count=0
 while guess != secret_word:

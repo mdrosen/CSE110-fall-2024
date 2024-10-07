@@ -1,35 +1,43 @@
-print ('Welcome to The Word Guess Game\n')
-secret_word = 'scriptures'
-num_letters=len(secret_word)
 
-s_word_letters_list = list(secret_word)
-print (num_letters)
 
-hidden = ' _ ' 
+def get_hint(secret_word, guess):
+    """Generates a hint for the user's guess based on the secret word."""
+    hint = []
+    for i in range(len(guess)):
+        if guess[i] == secret_word[i]:
+            hint.append(guess[i].upper()) 
+        elif guess[i] in secret_word:
+            hint.append(guess[i].lower())  
+        else:
+            hint.append(' _ ')  
+    return ''.join(hint)
 
-guess_hint= [hidden] * num_letters 
+def word_puzzle():
+    print('')
+    print ('Welcome to The Word Guess Game\n')
+    secret_word = 'scriptures'
+    trys=0  
 
-guess_hint_dis=(''.join(guess_hint))   
+    print("Your hint is:", ' _ ' * len(secret_word),'\n')
+ 
+    while True:
+        guess=input('What is your guess?: ').lower()
 
-print(f'Hint: {guess_hint_dis}\n')
+        if len(guess) != len(secret_word):
+            print(f"Sorry, the guess must have the same number of letters as the secret word.\n")
+            continue
 
-guess=''
-loop_count=0
-while guess != secret_word:
+        if guess == secret_word:
+            trys += 1
+            print('')
+            print('Congratulation you got the correct word \n')
+            break
 
-    guess=input('What is your guess? ')
-    word=guess.lower
-    
-    loop_count = loop_count + 1
-    print(f'you have made {loop_count} guesses')
-    
-    
-    
-    
-    
-    if word == secret_word:
-        print('')
-        print('congratulation you got the word correctly\n')
-    else:
-        print('')
-        print('sorry your guess is not correct, Please try again.\n ')
+        else:
+            print('')
+            print('sorry your guess is not correct, Please try again.\n ')
+            print('Your Hint: ',get_hint(secret_word,guess),'\n')
+
+    print(f'It took you: {trys} guesses')
+
+word_puzzle()

@@ -1,3 +1,6 @@
+# created by Matthew Rosenthal
+# I added a list of words to pull from for the secret word and pulls the word based of the random number generated
+# it also tells you the length of the word to the user
 from random import randint
 
 
@@ -24,6 +27,7 @@ def word_puzzle():
     attempts = 0  
 
     print("Your hint is:", ' _ ' * len(secret_word),'\n')
+    print(f'The word is {len(secret_word)} letters long.\n')
 
     while True:
         guess=input('What is your guess?: ').lower()

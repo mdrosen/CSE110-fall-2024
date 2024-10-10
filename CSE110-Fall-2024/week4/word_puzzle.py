@@ -19,7 +19,7 @@ def word_puzzle():
     trys = 0  
 
     print("Your hint is:", ' _ ' * len(secret_word),'\n')
- 
+
     while True:
         guess=input('What is your guess?: ').lower()
 

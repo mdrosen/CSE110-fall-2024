@@ -1,4 +1,7 @@
+from random import randint
 
+
+words=['dispersion','divination','calvary','golgotha','atonement','mormon','scriptures','christ','temple','ordinance','family','genealogy','alma','benjamin','nephi','faith','repentance']
 
 def get_hint(secret_word, guess):
     """Generates a hint for the user's guess based on the secret word."""
@@ -15,8 +18,10 @@ def get_hint(secret_word, guess):
 def word_puzzle():
     print('')
     print ('Welcome to The Word Guess Game\n')
-    secret_word = 'scriptures'
-    trys = 0  
+    i= randint(1,len(words))
+    secret_word = words[i]
+    print(i)
+    attempts = 0  
 
     print("Your hint is:", ' _ ' * len(secret_word),'\n')
 
@@ -28,7 +33,7 @@ def word_puzzle():
             continue
 
         if guess == secret_word:
-            trys += 1
+            attempts += 1
             print('')
             print('Congratulation you got the correct word \n')
             break
@@ -37,7 +42,8 @@ def word_puzzle():
             print('')
             print('sorry your guess is not correct, Please try again.\n ')
             print('Your Hint: ',get_hint(secret_word,guess),'\n')
+            attempts += 1
 
-    print(f'It took you: {trys} guesses')
+    print(f'It took you: {attempts} guesses')
 
 word_puzzle()

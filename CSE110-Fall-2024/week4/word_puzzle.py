@@ -16,7 +16,7 @@ def word_puzzle():
     print('')
     print ('Welcome to The Word Guess Game\n')
     secret_word = 'scriptures'
-    trys=0  
+    trys = 0  
 
     print("Your hint is:", ' _ ' * len(secret_word),'\n')
  

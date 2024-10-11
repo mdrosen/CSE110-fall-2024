@@ -1,6 +1,6 @@
 # created by Matthew Rosenthal
 # I added a list of words to pull from for the secret word and pulls the word based of the random number generated
-# it also tells you the length of the word to the user
+# it also tells you the length of the word to the user and I created a loop so the user can play again if they want to
 from random import randint
 
 
@@ -49,5 +49,18 @@ def word_puzzle():
             attempts += 1
 
     print(f'It took you: {attempts} guesses')
-
-word_puzzle()
+play_again='yes'
+while True:
+    
+    if play_again == 'yes':
+        word_puzzle()
+        choice=str(input(('Do you want to play again? (yes/no): ')))
+        play_again=choice.lower
+    elif play_again == 'no':
+        secret_word='null'
+        break
+    elif choice != 'yes' or choice != 'no':
+        print (('Not a valid input please try again'))
+        choice=str(input(('Do you want to play again? (yes/no): ')))
+        play_again=choice.lower
+        continue

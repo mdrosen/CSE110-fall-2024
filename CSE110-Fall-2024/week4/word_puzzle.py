@@ -2,7 +2,15 @@
 # I added a list of words to pull from for the secret word and pulls the word based of the random number generated
 # it also tells you the length of the word to the user and I created a loop so the user can play again if they want to
 from random import randint
-
+print('')
+print ('Welcome to The Word Guess Game\n')
+print ('Rules:')
+print('''
+1. An underscore _ indicates that the letter was not present in the secret word.
+2. A lowercase letter indicates that the letter was present somewhere in the secret word, but not at that position.
+3. An uppercase letter indicates that the letter was present at that exact spot in the secret word. 
+(In other words, if the second letter in the guess is also the second letter in the secret word, then that letter is shown as a capital.)
+''')
 
 words=['dispersion','divination','calvary','golgotha','atonement','mormon','scriptures','christ','temple','ordinance','family','genealogy','alma','benjamin','nephi','faith','repentance']
 
@@ -18,8 +26,6 @@ def get_hint(secret_word, guess):
     return ''.join(hint)
 
 def word_puzzle():
-    print('')
-    print ('Welcome to The Word Guess Game\n')
     i = randint(1,len(words))
     secret_word = words[i]
     print(i)
@@ -48,6 +54,7 @@ def word_puzzle():
             attempts += 1
 
     print(f'It took you: {attempts} guesses')
+    
 
 word_puzzle()
 

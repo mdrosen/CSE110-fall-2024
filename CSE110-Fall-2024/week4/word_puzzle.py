@@ -7,7 +7,6 @@ from random import randint
 words=['dispersion','divination','calvary','golgotha','atonement','mormon','scriptures','christ','temple','ordinance','family','genealogy','alma','benjamin','nephi','faith','repentance']
 
 def get_hint(secret_word, guess):
-    """Generates a hint for the user's guess based on the secret word."""
     hint = []
     for i in range(len(guess)):
         if guess[i] == secret_word[i]:
@@ -21,7 +20,7 @@ def get_hint(secret_word, guess):
 def word_puzzle():
     print('')
     print ('Welcome to The Word Guess Game\n')
-    i= randint(1,len(words))
+    i = randint(1,len(words))
     secret_word = words[i]
     print(i)
     attempts = 0  
@@ -49,18 +48,27 @@ def word_puzzle():
             attempts += 1
 
     print(f'It took you: {attempts} guesses')
-play_again='yes'
-while True:
+
+word_puzzle()
+
+def validate_yes_no(choice):
+    choice = choice.lower()
+
+    if choice == "yes":
+        return True
+    elif choice == "no":
+        return False
+    else:
+        raise ValueError("Invalid input. Please enter either 'yes' or 'no'.")
     
-    if play_again == 'yes':
-        word_puzzle()
-        choice=str(input(('Do you want to play again? (yes/no): ')))
-        play_again=choice.lower
-    elif play_again == 'no':
-        secret_word='null'
-        break
-    elif choice != 'yes' or choice != 'no':
-        print (('Not a valid input please try again'))
-        choice=str(input(('Do you want to play again? (yes/no): ')))
-        play_again=choice.lower
-        continue
+while True:
+    try:
+        choice = validate_yes_no(input("Do you want to play again? (yes/no): "))
+
+        if choice:
+            word_puzzle()
+        else:
+            print('good bye')
+            break
+    except ValueError as e:
+        print("Error:", e)

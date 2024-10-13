@@ -1,9 +1,15 @@
 #created by Matthew Rosenthal
 
+cart={}
 
+def returnSum(cart):
 
-cart=[]
-price=[]
+    price = []
+    for i in cart:
+        price.append(cart[i])
+    total = sum(price)
+    return total
+
 def menu():
     choice=0
     while choice != 5:
@@ -22,27 +28,31 @@ def menu():
         if choice == 1:
             
             items=input('Add to cart: ')
-            cart.append(items)
+            item_price:.2 = float(input('How much does it cost? :'))
+            cart[items]=item_price
             
-            item_price=float(input('How much does it cost? :'))
-            
-            price.append(item_price)
             
         elif choice == 2:
-            
-            print(cart)
-            print(price)
+            for items in cart:
+                print(items,' $',cart[items])
             
         elif choice == 3:
-            print ('remove')
+            for items in cart:
+                print(items,' $',cart[items])
+            items=input('What item do you want to remove? ')
+            del (cart[items])
+            
         elif choice == 4:
-            subtotal=sum(price)
-            print(f'Subtotal:$ {subtotal:.2f}')
+            subtotal=returnSum(cart)
+            print(f'Subtotal: ${subtotal:.2f}')
             tax=3.3
-            print('total')
+            total= subtotal * tax
+            print(f'Total: ${total:.2f}')
+            
         elif choice == 5:
             return
         else:
             print('not a valid choice')
 
 menu()
+

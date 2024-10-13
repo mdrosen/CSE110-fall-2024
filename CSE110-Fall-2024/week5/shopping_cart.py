@@ -28,7 +28,7 @@ def menu():
         if choice == 1:
             
             items=input('Add to cart: ')
-            item_price:.2 = float(input('How much does it cost? :'))
+            item_price:.2 = float(input('How much does it cost?: '))
             cart[items]=item_price
             
             
@@ -39,15 +39,19 @@ def menu():
         elif choice == 3:
             for items in cart:
                 print(items,' $',cart[items])
-            items=input('What item do you want to remove? ')
+            items=input('What item do you want to remove?: ')
             del (cart[items])
             
         elif choice == 4:
+            for items in cart:
+                print(items,' $',cart[items])
+            print('--------------------------')
             subtotal=returnSum(cart)
-            print(f'Subtotal: ${subtotal:.2f}')
+            print(f'Subtotal: $ {subtotal:.2f}')
             tax=3.3
+            print(f'Tax:        {tax} %')
             total= subtotal * tax
-            print(f'Total: ${total:.2f}')
+            print(f'Total:    $ {total:.2f}')
             
         elif choice == 5:
             return

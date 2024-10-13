@@ -1,6 +1,6 @@
 #created by Matthew Rosenthal
 
-cart={}
+cart = {}
 
 def returnSum(cart):
 
@@ -11,7 +11,7 @@ def returnSum(cart):
     return total
 
 def menu():
-    choice=0
+    choice = 0
     while choice != 5:
         print('                            ')
         print('----------------------------')
@@ -46,11 +46,11 @@ def menu():
             for items in cart:
                 print(items,' $',cart[items])
             print('--------------------------')
-            subtotal=returnSum(cart)
+            subtotal = returnSum(cart)
             print(f'Subtotal: $ {subtotal:.2f}')
-            tax=3.3
+            tax = 3.3
             print(f'Tax:        {tax} %')
-            total= subtotal * tax
+            total = subtotal * tax
             print(f'Total:    $ {total:.2f}')
             
         elif choice == 5:

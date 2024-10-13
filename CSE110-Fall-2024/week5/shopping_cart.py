@@ -48,9 +48,9 @@ def menu():
             print('--------------------------')
             subtotal = returnSum(cart)
             print(f'Subtotal: $ {subtotal:.2f}')
-            tax = 3.3
+            tax = 0.3
             print(f'Tax:        {tax} %')
-            total = subtotal * tax
+            total = subtotal + (subtotal * tax)
             print(f'Total:    $ {total:.2f}')
             
         elif choice == 5:

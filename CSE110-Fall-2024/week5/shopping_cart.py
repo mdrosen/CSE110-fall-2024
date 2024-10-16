@@ -1,6 +1,6 @@
 #created by Matthew Rosenthal
 
-cart = {}
+#cart = {}
 
 def returnSum(cart):
 
@@ -11,6 +11,7 @@ def returnSum(cart):
     return total
 
 def menu():
+    cart = []
     choice = 0
     while choice != 5:
         print('                            ')
@@ -29,16 +30,17 @@ def menu():
             
             items=input('Add to cart: ')
             item_price:.2 = float(input('How much does it cost?: '))
-            cart[items]=item_price
+            pair=[(items , item_price)]
+            cart=cart.append(pair)
             
             
         elif choice == 2:
-            for items in cart:
-                print(items,' $',cart[items])
+            for index, pair in (cart): 
+                print(index, pair)
             
         elif choice == 3:
-            for items in cart:
-                print(items,' $',cart[items])
+            for index, pair in enumerate(cart): 
+                print(index, pair) 
             items=input('What item do you want to remove?: ')
             del (cart[items])
             
@@ -59,4 +61,3 @@ def menu():
             print('not a valid choice')
 
 menu()
-

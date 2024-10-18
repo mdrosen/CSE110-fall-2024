@@ -1,3 +1,6 @@
+# created by Matthew Rosenthal
+#add a tax to the total output and add the ability to add and remove a qty for the items in the cart
+ 
 def menu():
     cart = []
     choice = 0
@@ -21,7 +24,7 @@ def menu():
             #Add item to cart
         if choice == 1:
             
-            items=str(input('Add to cart: '))
+            items = str(input('Add to cart: '))
             item_price:.2 = float(input('How much does it cost?: '))
             quantity = int(input('How many?: '))
             if quantity >= 1:

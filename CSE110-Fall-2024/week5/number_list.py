@@ -26,3 +26,34 @@ Have the user enter both positive and negative numbers, then find the smallest p
 Sort the numbers in the list and display the new, sorted list. Hint: There are python libraries that can help you here, try searching the internet for them.'''
 
 
+
+numbers = []
+while True:
+    number = int(input("Enter a number (0 to stop): "))
+    if number == 0:
+        break
+    else:
+        numbers.append(number)
+        
+num_sum=sum(numbers)
+avg_num=num_sum/len(numbers)
+num_max=max(numbers)
+
+pos_numbers=[num for num in numbers if num > 0]
+pos_num_min=min(pos_numbers)
+
+num_sort=sorted(numbers)
+pos__num(numbers):
+    positive_numbers = [num for num in numbers if num > 0]
+    if positive_numbers:
+        return min(positive_numbers)
+    else:
+        return None
+
+print(f'the sum of numbers is: {num_sum}')
+print(f'The average of the numbers is: {avg_num}')
+print(f'The largest number is: {num_max}')
+if pos_num_min is not None:
+        print(f'The smallest positive number is:{pos_num_min}')
+
+print(f'the sorted list of numbers is: {num_sort}')

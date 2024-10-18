@@ -30,29 +30,37 @@ def menu():
                 return
         #Display contents of Cart
         elif choice == 2:
+            print('')
             for i, items in enumerate(cart): 
                 print(f'{i+1}. {items[0]} - ${items[1]:.2f} Qty-{items[2]}')
             
         elif choice == 3:
             if cart:
-                print("The contents of the shopping cart are:")
+                print('')
                 for i, items in enumerate(cart, 1):
                     print(f"{i}. {items[0]} Qty-{items[2]}")
-                items = int(input('Select the number of item you would like to remove? '))
-                
+                items = int(input('Select the number of item you would like to update? '))
+
                 if 1 <= items <= len(cart):
-                    qty = int(input('How many do you want to remove?: '))
-                    if qty >= 1:
-                        del cart[quantity - qty]
-                        print(f'{qty} removed.')
+                    qty = int(input('Enter the new quantity: '))
+                    if qty > 0:
+                        cart[items - 1][2] = qty  
+                        print(f'Quantity updated to {qty}.')
+                    elif qty == 0:
+                        del cart[items - 1]  
+                        print(f'{items[0]} removed from the cart.')
                     else:
-                        break
+                        print('Quantity must be greater than 0.')
                 else:
                     print('Sorry, that is not a valid item number.')
             else:
                 print('The shopping cart is empty.')
-            
+                    
         elif choice == 4:
+            print('')
+            for i, items in enumerate(cart, 1):
+                    print(f"{i}.       {items[0]} Qty-{items[2]}")
+            print('----------------------')
             subtotal = sum(items[1] * items[2] for items in cart)
             print(f'Subtotal  $ {subtotal:.2f}')
             tax=.3

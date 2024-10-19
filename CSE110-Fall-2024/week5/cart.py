@@ -29,35 +29,40 @@ def menu():
             quantity = int(input('How many?: '))
             if quantity >= 1:
                 cart.append([items,item_price,quantity])
-            else:
-                return
+            
         #Display contents of Cart
         elif choice == 2:
-            print('')
-            for i, items in enumerate(cart): 
-                print(f'{i+1}. {items[0]} - ${items[1]:.2f} Qty-{items[2]}')
-            
+            if cart:
+                print('')
+                for i, items in enumerate(cart): 
+                    print(f'{i+1}. {items[0]} - ${items[1]:.2f} Qty-{items[2]}')
+            else:
+                print('')
+                print ('The Cart is Empty')
+                
         elif choice == 3:
             if cart:
                 print('')
                 for i, items in enumerate(cart, 1):
                     print(f"{i}. {items[0]} Qty-{items[2]}")
+                    print('')
                 items = int(input('Select the number of item you would like to update? '))
 
                 if 1 <= items <= len(cart):
+                    print('')
                     qty = int(input('Enter the new quantity: '))
                     if qty > 0:
                         cart[items - 1][2] = qty  
                         print(f'Quantity updated to {qty}.')
                     elif qty == 0:
-                        del cart[items - 1]  
-                        print(f'{items[0]} removed from the cart.')
+                        print(f'{cart[items - 1][0]} ,removed from the cart.')
+                        del cart[items - 1]      
                     else:
-                        print('Quantity must be greater than 0.')
+                        print('Quantity must be 0 or greater.')
                 else:
                     print('Sorry, that is not a valid item number.')
             else:
-                print('The shopping cart is empty.')
+                print('The Shopping Cart is Empty.')
                     
         elif choice == 4:
             print('')

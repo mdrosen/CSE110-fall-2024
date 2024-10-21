@@ -3,17 +3,18 @@
 # and figured out how to include the degree symbol
 
 degree = u'\u00B0'
+
 def C_to_F(C):
     F = C * (9/5) + 32
     return F
+
 def F_to_C(F):
     C=(F - 32) / 1.8
     return C
 
-
-def main():
-    air_temp = int(input('Air Temp: '))
-    unit = str(input(f'is the temp in {degree}F or {degree}C (C\F): ')).upper()
+def wind_chill(a , u):
+    unit = u
+    air_temp = a
     print('')
     if unit == 'C':
             air_temp_C = air_temp
@@ -35,4 +36,10 @@ def main():
         print(f'The Wind Chill is: {wind_chill_F:.2f}{degree}F at a Air temp. of: {air_temp_F:.1f}{degree}F and Wind Speed of: {wind_speed_mph} MPH or a wind speed of: {wind_speed_knots:.2f} knots')
         print(f'The Wind Chill is: {wind_chill_C:.2f}{degree}C at a Air temp. of: {air_temp_C:.1f}{degree}C and Wind Speed of: {wind_speed__km_h:.2f} KM/H\n')
         print('---------------------------------------------------------------------------------------------------------------------------------')
+        
+def main():
+    a = int(input('Air Temp: '))
+    u = str(input(f'is the temp in {degree}F or {degree}C (C\F): ')).upper()
+    wind_chill(a,u)
+    
 main()

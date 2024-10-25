@@ -1,6 +1,6 @@
 #created by matthew rosenthal
-#the ability to select a country and see its avg., min., and max
- 
+#I added the ability to select a country and see its avg., min., and max with in the data set
+
 def get_year():
     while True:
         try:
